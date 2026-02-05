@@ -3,24 +3,72 @@ import random
 def get_templates():
     return [
         {
-            "name": "Adventure",
-            "prompts": ["noun", "adjective", "verb", "place", "celebrity", "animal", "emotion"],
+            "name": "Office Chaos",
+            "prompts": ["job", "food", "emotion", "object", "celebrity", "verb"],
             "template": """
-    One day in {place}, a {adjective} {noun} decided to {verb} with {celebrity}.
-    Suddenly, a wild {animal} appeared, feeling very {emotion}. {ending} 
-    """
+At work today, the {job} accidentally microwaved a {food}.
+It exploded all over the {object} while {celebrity} watched.
+Everyone felt very {emotion}, so naturally they decided to {verb}.
+{ending}
+"""
         },
         {
-            "name": "Sci-Fi",
-            "prompts": ["planet", "alien", "gadget", "superpower", "emotion"],
+            "name": "Reality TV Drama",
+            "prompts": ["name", "adjective", "object", "emotion", "verb", "place"],
             "template": """
-On the distant planet {planet}, a sneaky {alien} invented a {gadget} 
-that granted {superpower}. The galaxy shook as they felt extremely {emotion}.
+Breaking news: {name} was voted off the {adjective} island
+after throwing a {object} across the set in {place}.
+They were extremely {emotion} and promised to {verb} next season.
 {ending}
-            """
+"""
         },
-    
+        {
+            "name": "Fantasy Gone Wrong",
+            "prompts": ["creature", "weapon", "adjective", "emotion", "food", "verb"],
+            "template": """
+The legendary {creature} pulled out a {adjective} {weapon}
+to defend the kingdom… but got distracted by a {food}.
+Feeling {emotion}, it chose to {verb} instead of fighting.
+Honestly? Probably the right call.
+{ending}
+"""
+        },
+        {
+            "name": "Awkward Date",
+            "prompts": ["celebrity", "food", "place", "emotion", "object", "verb"],
+            "template": """
+My date with {celebrity} started great at {place},
+until they ordered a {food} and pulled a {object} out of nowhere.
+Things got {emotion}, so I had no choice but to {verb}.
+Dating apps are exhausting.
+{ending}
+"""
+        },
+        {
+            "name": "Apocalypse But Make It Dumb",
+            "prompts": ["animal", "object", "celebrity", "emotion", "verb", "place"],
+            "template": """
+Scientists confirmed the apocalypse began when a {animal}
+pressed a giant {object} while {celebrity} livestreamed it from {place}.
+Humanity felt {emotion} and immediately tried to {verb}.
+Honestly… we had a good run.
+{ending}
+"""
+        },
+        {
+            "name": "Superhero Origin Story",
+            "prompts": ["adjective", "animal", "substance", "superpower", "emotion", "verb"],
+            "template": """
+After being bitten by a {adjective} {animal}
+and falling into a vat of {substance},
+I gained the power of {superpower}.
+I felt {emotion}, so obviously I decided to {verb}.
+This is probably fine.
+{ending}
+"""
+        }
     ]
+
     
 def generate_story(words, template):
     emotion = words.get("emotion", "mysterious").lower()
